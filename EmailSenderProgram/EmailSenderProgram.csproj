@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CB404AD4-4B82-44A9-9F2C-4F9C0910D54A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EmailSenderProgram</RootNamespace>
+    <AssemblyName>EmailSenderProgram</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\GlobalConstant.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="appsettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EmailSenderProgram.BussinessObject\EmailSenderProgram.BussinessObject.csproj">
+      <Project>{1b3a1014-69f0-4e5e-b747-3e918cdcee3a}</Project>
+      <Name>EmailSenderProgram.BussinessObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmailSenderProgram.DataAccess\EmailSenderProgram.DataAccess.csproj">
+      <Project>{72af398e-c468-4659-a499-b761c522ea8e}</Project>
+      <Name>EmailSenderProgram.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmailSenderProgram.EmailService\EmailSenderProgram.EmailService.csproj">
+      <Project>{6ce11199-cc57-409a-9de3-5dab4175c313}</Project>
+      <Name>EmailSenderProgram.EmailService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmailSenderProgram.Logger\EmailSenderProgram.Logger.csproj">
+      <Project>{452b52cc-eb1d-4fb8-94c6-5b8ddd9d3f77}</Project>
+      <Name>EmailSenderProgram.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmailSenderProgram.Utility\EmailSenderProgram.Utility.csproj">
+      <Project>{2673e22c-42e9-48a7-bdde-846aec3e55a1}</Project>
+      <Name>EmailSenderProgram.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

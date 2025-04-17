@@ -1,0 +1,49 @@
+Instructions 2019.1
+
+EmailSenderProgram is a fictitious application that sends mail to customers. Today two types of mail are sent; "Welcome mail" and "Come back mail". The idea is that the application runs every day as a scheduled job. When the run is finished, it is printed if it went well or badly.
+You know that someday you will add more mail types.
+
+Task 1 - Programming task (write code)
+The code is not good, not in any way. It contains obvious bugs, some misconceptions and it is quite ugly written.
+
+Your task is to make the code better and prepare it to be able to build on with more mail types!
+I want easy-to-read, easy-to-understand and robust code that is easy to modify and build on. Write about the program and write down how you think, what shortcomings you have identified and how to attack the problem.
+It is free to change the project except in DataLayer.cs.
+
+Task 2 - Theoretical task (do not write code)
+If you got a job writing a similar program from scratch, how did you design it? Describe how the architecture should look and if you would use some special techniques.
+
+
+Task 1 Findings & Solutions:
+----------------------------
+1. Resolved the logical error in retrieving customers for the welcome email.
+2. Corrected the logic for sending the comeback email, which was previously scheduled for Monday instead of Sunday.
+3. Substituted the foreach loop with a LINQ query to obtain the customer list.
+4. Replaced hard-coded text with global constant variables and application configuration (appconfig.json) variables.
+5. Created separate HTML files for the content of the welcome and comeback emails.
+6. Rewritten the email sender program utilizing a multi-tier architecture to facilitate maintenance and future upgrades.
+7. Established a dedicated service for sending emails.
+8. Implemented logging functionality using Serilog.
+9. Added unit test cases utilizing NUnit.
+10. Effectively managed exceptions and logged error messages with Serilog, with the log file accessible in the executable folder (Debug folder).
+
+
+Task 2 My Ideas:
+----------------
+1. I will adopt more descriptive names for fields, variables, methods, and classes.  
+2. I will implement exception handling mechanisms.  
+3. I will apply performance optimization techniques, such as using && instead of & and || instead of | for comparisons.  
+4. I will ensure that methods are limited to a single responsibility.  
+5. I will utilize enums for representing discrete values.  
+6. Adhering to industry standards and established guidelines will enhance the clarity, maintainability, and extensibility of the code.  
+7. I will employ Entity Framework along with LINQ queries.  
+8. I will apply object-oriented programming principles to design multiple email types.  
+9. I will adopt a Microservice Architecture.  
+10. I will implement CQRS (Command Query Responsibility Segregation).  
+11. I will adhere to SOLID principles to improve code management.  
+12. I need to carefully consider email settings and content configuration.  
+13. I will establish a more effective retry process for handling failover situations.  
+14. I will increase the number of unit tests to cover various positive and negative scenarios based on the use cases.  
+15. I can schedule this email program as a Windows Scheduler service.  
+16. The architecture should be structured using an N-Tier design.  
+17. I will utilize Serilog or Log4net for effective log management.  
